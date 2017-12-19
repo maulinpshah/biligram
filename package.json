@@ -1,0 +1,20 @@
+{
+  "name": "biligram",
+  "version": "2.0.0",
+  "description": "Utility to track bilirubin values against nomogram in newborns",
+  "main": "biligram.js",
+  "author": "Daniel Rosenberg, MD; Maulin Shah, MD",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "highcharts": "^6.0.4",
+    "jquery": "^3.2.1",
+    "requirejs": "^2.3.5",
+    "rgbcolor": "^1.0.1",
+    "stackblur": "^1.0.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-requirejs": "^1.0.0"
+  }
+}

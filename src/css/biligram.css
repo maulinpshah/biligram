@@ -1,0 +1,315 @@
+#followUpRiskFactors {
+    display:none;
+    background-color: lightgray;
+    padding:10px 10px 10px 10px;
+    width: 60%;
+    border-color: darkblue;
+    border-width: 5px;
+}
+
+/* mouseover state */
+.riskFactorHover:hover {
+    background-position:0 -44px;
+}
+
+/* clicked state */
+.riskFactorHover:focus {
+    background-position:0 -88px;
+}
+
+.modal-wide .modal-dialog {
+    width: 80%; /* or whatever you wish */
+}
+
+
+#readyToCopy {
+    display: none;
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    right: 100px;
+    z-index: 99;
+
+}
+
+#readyToCopy div {
+    padding:15px;
+}
+
+#templates {
+    display:none;
+}
+
+#warnings {
+    width:70%;
+    padding-left:70px;
+}
+
+#errors {
+    width:70%;
+    padding:20px;
+}
+
+
+/* tooltip text */
+/* \25c9 is the fisheye Unicode symbol */
+div.tooltipRiskZone:before {
+    content:'\25C9';
+    margin-right:5px;
+}
+
+.riskUndefined div.tooltipRiskZone:before {
+    color:black;
+}
+
+.riskLow div.tooltipRiskZone:before {
+    color:green;
+}
+
+.riskLowIntermediate div.tooltipRiskZone:before {
+    color:yellow;
+}
+
+.riskHighIntermediate div.tooltipRiskZone:before {
+    color:orange;
+}
+
+.riskHigh div.tooltipRiskZone:before {
+    color:red;
+}
+
+/* risk zone display */
+.tooltipRiskZone span {
+    display:none;
+}
+.biliTT.riskUndefined .tooltipRiskZone span.riskUndefined {
+    display:inline;
+}
+
+.biliTT.riskLow .tooltipRiskZone span.riskLow {
+    display:inline;
+}
+
+.biliTT.riskLowIntermediate .tooltipRiskZone span.riskLowIntermediate {
+    display:inline;
+}
+
+.biliTT.riskHighIntermediate .tooltipRiskZone span.riskHighIntermediate {
+    display:inline;
+}
+
+.biliTT.riskHigh .tooltipRiskZone span.riskHigh{
+    display:inline;
+}
+
+.treatmentZone {
+    display:none;
+}
+.photoLow .treatmentZone,
+.photoMedium .treatmentZone,
+.photoHigh .treatmentZone {
+    display:block;
+}
+
+
+/* phototherapy risk display */
+.tooltipPhototherapy {
+    display:none;
+}
+
+.photoLow .tooltipPhototherapy,
+.photoMedium .tooltipPhototherapy,
+.photoHigh .tooltipPhototherapy {
+    display:inline;
+}
+
+.treatmentZone .notLowPhotoWarning {
+    display:none;
+}
+
+
+.photoMedium.youngNo .treatmentZone .notLowPhotoWarning {
+    display:inline;
+}
+
+.photoLow.youngYes .treatmentZone .notLowPhotoWarning {
+    display:inline;
+}
+
+.youngYesPhototherapy {
+    display:none;
+}
+
+.photoLow.youngYes .treatmentZone .youngYesPhototherapy {
+    display:inline;
+}
+
+.photoMedium.youngYes .treatmentZone .youngYesPhototherapy {
+    display:inline;
+}
+/* transfusion risk display */
+.transfusionHigh .treatmentZone,
+.transfusionMedium .treatmentZone,
+.transfusionLow .treatmentZone
+{
+    display:block;
+}
+
+.tooltipTransfusion {
+    display:none;
+}
+.transfusionHigh .tooltipTransfusion,
+.transfusionMedium .tooltipTransfusion,
+.transfusionLow .tooltipTransfusion {
+    display:block;
+}
+
+.treatmentZone .notLowTransfusionWarning {
+    display:none;
+}
+
+.transfusionMedium.youngNo .treatmentZone .notLowTransfusionWarning {
+    display:inline;
+}
+
+.transfusionLow.youngYes .treatmentZone .notLowTransfusionWarning {
+    display:inline;
+}
+
+.youngYesTransfusion {
+    display:none;
+}
+
+.transfusionLow.youngYes .treatmentZone .youngYesTransfusion {
+    display:block;
+}
+
+.transfusionMedium.youngYes .treatmentZone .youngYesTransfusion {
+    display:inline;
+}
+
+/*
+.youngYes .youngYes{
+    display:inline;
+}
+
+.youngNo .youngYes {
+    display:none;
+}
+*/
+
+/* \25c9 is the fisheye unicode symbol */
+.biliTT.photoHigh .tooltipPhototherapy:before,
+.biliTT.photoMedium .tooltipPhototherapy:before,
+.biliTT.photoLow .tooltipPhototherapy:before{
+    content:'\25C9';
+    color:#1016FF;
+    margin-right:5px;
+
+}
+
+.biliTT.transfusionHigh .tooltipTransfusion:before,
+.biliTT.transfusionMedium .tooltipTransfusion:before,
+.biliTT.transfusionLow .tooltipTransfusion:before {
+    content:'\25C9';
+    color:DarkViolet;
+    margin-right:5px;
+
+}
+
+
+.biliRow.tooYoungYes .followup.riskFactorsYes {
+    display:none;
+}
+
+.biliRow.tooYoungYes .followup.riskFactorsNo {
+    display:none;
+}
+
+.biliRow.tooYoungNo .followup.riskFactorsNA {
+    display:none;
+
+}
+
+.biliRow .recommendation {
+    display: none;
+}
+.biliRow.riskUndefined .recommendation.riskUndefined {
+    display:inline;
+}
+
+.biliRow.riskLow .recommendation.riskLow {
+    display:inline;
+}
+.biliRow.riskLowIntermediate .recommendation.riskLowIntermediate {
+    display:inline;
+}
+.biliRow.riskHighIntermediate .recommendation.riskHighIntermediate {
+    display:inline;
+}
+.biliRow.riskHigh .recommendation.riskHigh {
+    display:inline;
+}
+
+
+.biliRow .zoneName {
+    display:none;
+}
+
+.biliRow.riskUndefined .zoneName.riskUndefined {
+    color:black;
+    display:table-cell;
+}
+
+.biliRow.riskLow .zoneName.riskLow {
+    background-color:green;
+    color:white;
+    display:table-cell;
+}
+
+.biliRow.riskLowIntermediate .zoneName.riskLowIntermediate {
+    background-color:yellow;
+    display:table-cell;
+}
+
+.biliRow.riskHighIntermediate .zoneName.riskHighIntermediate {
+    background-color:orange;
+    display:table-cell;
+}
+
+.biliRow.riskHigh .zoneName.riskHigh {
+    background-color:red;
+    color:white;
+    display:table-cell;
+}
+
+.biliRow.youngYes .youngNo {
+    display:none;
+}
+
+.biliRow.youngNo .youngYes {
+    display:none;
+}
+
+.biliRow .treatmentZone {
+
+    padding:12px;
+}
+
+.biliRow.photoHigh .treatmentZone,
+.biliRow.photoMedium .treatmentZone,
+.biliRow.photoLow .treatmentZone {
+    background-color:#1016FF;
+    color:white;
+}
+
+.biliRow.transfusionHigh .treatmentZone,
+.biliRow.transfusionMedium .treatmentZone,
+.biliRow.transfusionLow .treatmentZone {
+    background-color:DarkViolet;
+    color:white;
+}
+
+
+
+

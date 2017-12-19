@@ -1,0 +1,26 @@
+<script type="text/javascript"
+src="https://deschutes.providence.org/epicftr/temp/biligram.js?@NOW@"
+></script>
+
+<form id="data" style="display:none;">
+
+    <!-- standard epic DBLINK smartlinks to pull birth info -->
+    <textarea id="birthDay">@DBLINK(ept,110)@</textarea>
+    <textarea id="birthTime">@DBLINK(ept,111)@</textarea>
+    <textarea id="birthGA">@DBLINK(ept,19408)@</textarea>
+    <textarea id="birthWeight">@DBLINKWGT(ept,19401)@</textarea>
+
+    <!-- use the LABLAST smartlink to configure your bilirubin values.
+        This build assumes all of your bili are captured as lab results.
+        We have three here, you can choose to remove any of them if
+        your site doesn't perform this type - POC, Transcutaneous, and serum
+     -->
+    <div id="biliSerum">@LABLAST(bilitot:10)@</div>
+    <div id="biliPOC">@LABLAST(bili:10)@</div>
+    <div id="biliTCLab">@LABLAST(poctransbili:10)@ </div>
+
+    <!-- work in progress! -->
+    <textarea id="phototherapy"></textarea>
+
+TEST
+</form>

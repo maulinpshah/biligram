@@ -1,0 +1,13 @@
+#ignore builds
+dist
+
+#ignore node_modules
+node_modules
+
+#ignore special files
+.DS_Store
+
+#ignore temp
+temp
+
+.sass-cache

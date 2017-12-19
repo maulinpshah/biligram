@@ -1,0 +1,263 @@
+
+<iframe id="_iframe" name="_iframe" style="width:312px;height:200px;border:0;" scrolling="no" style="overflow:hidden"></iframe>
+
+
+<div style="background-color:white; font:arial; font-size:14pt;">
+    <a href="EpicACT:OB_BILIRUBIN_CONSOLE_ACTIVITY,RunParam:LaunchOptions:2,@EPICACTCONTEXT@">
+        <img style="border:0;"  src="http://epicdata.providence.org/InpatientDocuments/Icons/ResultsButton.png">
+    </a>
+
+    <a href="EpicACT:BILIGRAM_POPUP_FULL,RunParam:LaunchOptions:2,@EPICACTCONTEXT@">
+        <img style="border:0;"  src="http://epicdata.providence.org/InpatientDocuments/Icons/BiliButton.png">
+    </a>
+
+</div>
+
+
+<textarea style="display:none" type="text/etxscript" src= "https://deschutes.providence.org/epicftr/biligram/lib/jquery-2.2.4.min.js"></textarea>
+<textarea style="display:none" type="text/etxscript" src= "https://deschutes.providence.org/epicftr/biligram/lib/bootstrap.min.js" ></textarea>
+<textarea style="display:none" type="text/etxscript" src= "https://deschutes.providence.org/epicftr/biligram/lib/jquery.tools.min.js" ></textarea>
+<textarea style="display:none" type="text/etxscript" src= "https://deschutes.providence.org/epicftr/biligram/lib/highcharts.js" ></textarea>
+<textarea style="display:none" type="text/etxscript" src= "https://deschutes.providence.org/epicftr/biligram/lib/highcharts-more.js" ></textarea>
+<textarea style="display:none" type="text/etxscript" src= "https://deschutes.providence.org/epicftr/biligram/lib/rgbcolor.js" ></textarea>
+<textarea style="display:none" type="text/etxscript" src= "https://deschutes.providence.org/epicftr/biligram/lib/StackBlur.js" ></textarea>
+<textarea style="display:none" type="text/etxscript" src= "https://deschutes.providence.org/epicftr/biligram/lib/canvg.js"></textarea>
+<textarea style="display:none" type="text/etxscript" src= "https://deschutes.providence.org/epicftr/biligram/js/calculator.js?@NOW@" ></textarea>
+<textarea style="display:none" type="text/etxscript" src= "https://deschutes.providence.org/epicftr/biligram/js/infant.js?@NOW@" ></textarea>
+<textarea style="display:none" type="text/etxscript" src= "https://deschutes.providence.org/epicftr/biligram/js/chart.js?@NOW@" ></textarea>
+<textarea style="display:none" type="text/etxscript" src= "https://deschutes.providence.org/epicftr/biligram/js/parse.js?@NOW@" ></textarea>
+<textarea style="display:none" type="text/etxscript" src= "https://deschutes.providence.org/epicftr/biligram/js/ui.js?@NOW@" ></textarea>
+<textarea style="display:none" type="text/etxscript" src= "https://deschutes.providence.org/epicftr/biligram/js/copy.js?@NOW@" ></textarea>
+<textarea style="display:none" type="text/etxscript" src= "https://deschutes.providence.org/epicftr/biligram/js/main.js?@NOW@" ></textarea>
+<link href= "https://deschutes.providence.org/epicftr/biligram/lib/bootstrap.min.css" rel="stylesheet">
+<link href= "https://deschutes.providence.org/epicftr/biligram/biligram.css" rel="stylesheet">
+<link href= "https://deschutes.providence.org/epicftr/biligram/lib/bootstrap-theme.min.css" rel="stylesheet">
+
+<!-- bootstrap javascript -->
+@ETX(888100,HTML)@
+
+<!--debug -->
+@ETX(52323,HTML)@
+<form id="data" style="display:none;left: -10000px;" >
+    <textarea id="birthDay">@DBLINK(ept,110)@</textarea>
+    <textarea id="birthTime">@DBLINK(ept,111)@</textarea>
+    <textarea id="birthGA">@DBLINK(ept,19408)@</textarea>
+    <textarea id="birthWeight">@DBLINKWGT(ept,19401)@</textarea>
+    <div id="biliSerum">
+        @HTMLLABLAST(bilitot:10)@
+    </div>
+    <div id="biliPOC">
+        @HTMLLABLAST(bili:10)@
+    </div>
+    <div id="biliTCLab">
+        @HTMLLABLAST(poctransbili:10)@
+    </div>
+    <textarea name="mini">true</textarea>
+</form>
+
+
+<!-- Main DIV -->
+<div id="biligram">
+    <div id="errors">
+        <!--Errors will render here -->
+    </div>
+
+
+
+    <div id="resultsTable" >
+        <div id="warnings">
+            <!--Errors will render here -->
+        </div>
+
+
+        <table class="table table-striped table-hover table-condensed">
+            <thead>
+            <tr>
+                <th>Time</th>
+                <th>Age</th>
+                <th>Bilirubin</th>
+                <th>Risk</th>
+                <!-- <th>Follow-up recommendations</th> -->
+            </tr>
+
+            </thead>
+            <tbody>
+
+            </tbody>
+            <tfoot>
+            <td>
+                <button type="submit" id="showAll" style="display:none" class="btn btn-default">Show all &#8964;</button>
+                <button type="submit" id="showFirst" style="display:none" class="btn btn-default">Show most recent &#8963;</button>
+            </td>
+            </tfoot>
+        </table>
+
+
+    </div>
+
+
+
+
+</div>
+
+
+
+<div id="templates" style="display:none">
+    <!-- templates are used by the javascript to create the content mapped into the structures above -->
+
+    <!-- error templates -->
+    <div id="NoWeight" >
+        <div class="alert alert-danger">
+            <strong>Error:</strong>
+            Unable to determine birth weight.
+        </div>
+    </div>
+    <div id="NoBirthday" >
+        <div class="alert alert-danger">
+            <strong>Error:</strong>
+            Unable to determine birthday or gestational age.
+        </div>
+    </div>
+
+    <!-- Warning: templates -->
+    <div id="InTxZone" >
+        <div class="alert alert-danger">
+            <strong>Warning:</strong>
+            Hyperbilirubinemia treatment ({{TYPE}}) was recommended for this
+            patient.
+            Followup recommendations should be modified to reflect the
+            increased risk.
+        </div>
+    </div>
+
+
+    <div id="InvalidWeight36" >
+        <div class="alert alert-danger">
+            <strong>Warning:</strong>
+            The Bhutani nomogram risk zones are valid only for newborns GA 36+ weeks
+            with a birth weight &ge; 2.5 kg.
+            This patient has a gestational age of {{AGE}} weeks, but a weight of only {{WEIGHT}} kg.
+            <div class="reference">
+                See <a  target=_blank  href="http://www.uptodate.com/contents/hyperbilirubinemia-in-the-preterm-infant-less-than-35-weeks-gestation?source=search_result&search=hyperbilirubinemia+preterm&selectedTitle=1%7E150">Hyperbilirubinemia in the Preterm Infant</a> for alternative thresholds.
+            </div>
+        </div>
+    </div>
+
+    <div id="InvalidWeight35" >
+        <div class="alert alert-danger">
+            <strong>Warning:</strong>
+            This patient's gestational age of {{AGE}} weeks and weight of {{WEIGHT}} kg
+            is not defined in the Bhutani nomogram. Risk is only defined for
+            patients in this age range (35-36 weeks) with birth weight &ge; 2 kg.
+            <div class="reference">
+                See <a  target=_blank  href="http://www.uptodate.com/contents/hyperbilirubinemia-in-the-preterm-infant-less-than-35-weeks-gestation?source=search_result&search=hyperbilirubinemia+preterm&selectedTitle=1%7E150">Hyperbilirubinemia in the Preterm Infant</a> for alternative thresholds.
+            </div>
+        </div>
+    </div>
+
+    <div id="InvalidAge" >
+        <div class="alert alert-danger">
+
+            <strong>Warning:</strong>
+            The Bhutani nomogram only defines risk for infants
+            with a gestational age &ge; 35 weeks.
+            This patient's gestational age of {{AGE}} weeks is less than
+            what's valid on the nomogram.
+            <div class="reference">
+                See <a target=_blank  href="http://www.uptodate.com/contents/hyperbilirubinemia-in-the-preterm-infant-less-than-35-weeks-gestation?source=search_result&search=hyperbilirubinemia+preterm&selectedTitle=1%7E150">Hyperbilirubinemia in the Preterm Infant</a> for alternative thresholds.
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- tooltip templates
+         Makes extensive use of "functional style"
+         The templates include ALL the text that could ever display
+         the style toggles all the display OFF
+         the javascript sets the class names in the root element
+         the style paths describe what should display ON based on the classes in the root element
+     -->
+
+    <div id="tooltipTemplate">
+        <div class="biliTT risk{{RISKZONECLASS}} photo{{PHOTOZONECLASS}} transfusion{{TRANSFUSIONZONECLASS}} young{{ISYOUNG}} tooYoung{{ISTOOYOUNG}}">
+            <div class="tooltipText">
+                <b>{{HOURS}}</b> hours of age &mdash; <b>{{LEVEL}}</b> mg/dL ({{METHOD}})
+            </div>
+            <div class="tooltipRiskZone">
+                <span class="riskUndefined">Undefined</span>
+                <span class="riskLow">Low risk zone</span>
+                <span class="riskLowIntermediate">Low-intermediate risk zone</span>
+                <span class="riskHighIntermediate">High-intermediate risk zone</span>
+                <span class="riskHigh">High risk zone</span>
+            </div>
+
+            <div class="treatmentZone">
+
+                <span class="tooltipPhototherapy"> Exceeds <b>phototherapy threshold</b> 
+                 <span class="notLowPhotoWarning">
+                           for infants with these risk factors:</br>isoimmune disease, G6PD deficiency, asphysxia, lethargy, temp instability, sepsis, albumin < 3.0 g/dL (if measured)
+                        </span>
+                 <span class="youngYesPhototherapy">
+                        for infants 35w-37w6d GA
+                    </span>
+                 </span>
+                <span class="tooltipTransfusion"> Exceeds <b>transfusion threshold</b>
+                 <span class="notLowTransfusionWarning">for infants with these risk factors:</br>isoimmune disease, G6PD deficiency, asphysxia, lethargy, temp instability, sepis, albumin < 3.0 g/dL (if measured)
+                        </span>
+                 <span class="youngYesTransfusion">
+                        for infants 35w-37w6d GA
+                    </span>
+                </span>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- row template
+         uses functional style as above to determine which followup to show
+    -->
+
+
+    <table>
+        <tbody  id="resultTableRowTemplate">
+        <tr class="biliRow risk{{RISKZONECLASS}} photo{{PHOTOZONECLASS}} transfusion{{TRANSFUSIONZONECLASS}} young{{ISYOUNG}} tooYoung{{ISTOOYOUNG}}">
+            <td>{{TIME}}</td>
+            <td>{{HOURS}}</td>
+            <td>{{LEVEL}}</td>
+
+            <!-- only one of these cells will show -->
+            <td class="zoneName riskUndefined">Undefined</td>
+            <td class="zoneName riskLow">Low risk zone</td>
+            <td class="zoneName riskLowIntermediate">Low-intermediate risk zone</td>
+            <td class="zoneName riskHighIntermediate">High-intermediate risk zone</td>
+            <td class="zoneName riskHigh">High risk zone</td>
+            <td>
+            <div class="treatmentZone">
+                <span class="tooltipPhototherapy">Exceeds <b>phototherapy</b> threshold</span>
+                <span class="notLowPhotoWarning">
+                       for infants with these risk factors:</br>
+                    isoimmune disease, G6PD deficiency, asphysxia, lethargy, temp instability, sepis, albumin < 3.0 g/dL (if measured)
+                    </span>
+                <span class="youngYesPhototherapy">
+                    for infants 35w-37w6d GA
+                    </span>
+                <span class="tooltipTransfusion">Exceeds <b>transfusion</b> threshold</span>
+                <span class="notLowTransfusionWarning">
+                       for infants with these risk factors:</br>
+                    isoimmune disease, G6PD deficiency, asphysxia, lethargy, temp instability, sepis, albumin < 3.0 g/dL (if measured)
+                    </span>
+                <span class="youngYesTransfusion">
+                    for infants 35w-37w6d GA
+                    </span>
+            </div>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
