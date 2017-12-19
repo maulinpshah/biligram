@@ -1,217 +1,211 @@
 <div id="biligramContent">
 
-<!-- Twitter Bootstrap header -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
+  <!-- Twitter Bootstrap header -->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <span class="navbar-brand active" href="#">Biligram</span>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="EpicACT:BILIGRAM_POPUP_FULL,RunParam:LaunchOptions:2,@EPICACTCONTEXT@" class="miniVersionOnly" style="display:none;">Full version of Biligram</a></li>
-                <li><a href="EpicACT:OB_BILIRUBIN_CONSOLE_ACTIVITY,RunParam:LaunchOptions:2,@EPICACTCONTEXT@" class="miniVersionOnly" style="display:none;">Enter Bilirubin Value</a></li>
+        <span class="navbar-brand active" href="#">Biligram</span>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="EpicACT:BILIGRAM_POPUP_FULL,RunParam:LaunchOptions:2,@EPICACTCONTEXT@" class="miniVersionOnly" style="display:none;">Full version of Biligram</a></li>
+          <li><a href="EpicACT:OB_BILIRUBIN_CONSOLE_ACTIVITY,RunParam:LaunchOptions:2,@EPICACTCONTEXT@" class="miniVersionOnly" style="display:none;">Enter Bilirubin Value</a></li>
 
-                <li><a href="#" data-toggle="modal" data-target="#aboutModal">About</a></li>
-                <li><a href="#" data-toggle="modal" data-target="#helpModal">Help</a></li>
-            </ul>
-        </div><!--/.nav-collapse -->
+          <li><a href="#" data-toggle="modal" data-target="#aboutModal">About</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#helpModal">Help</a></li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
     </div>
-</nav>
+  </nav>
 
-<!-- About modal dialog box -->
-<div class="modal fade" id="aboutModal" role="dialog">
+  <!-- About modal dialog box -->
+  <div class="modal fade" id="aboutModal" role="dialog">
     <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">About Biligram</h4>
-            </div>
-            <div class="modal-body">
-                <div class="panel panel-default">
-
-                    <div class="panel-heading">
-                        <H4 class="panel-title">Biligram 2.0</h4>
-                    </div>
-                    <div class="panel-body">
-                        Version 2.0 (Javascript, 2016-2017)<br/>
-                        Previous C# versions 0.1-0.3 (2013-2015)<br/>
-                        <br/>
-                        <p class="text-info">Calculates newborn bilirubin risk zones and displays treatment thresholds.
-
-                            Naturally, use of this software does not constitute medical advice;
-                            it's merely a tool to help clinicians through the mechanics of plotting data.
-                            It could even be terribly wrong, so when making treatment decisions with potentially serious consequences
-                            it's always best to check your work.
-                        </p>
-                        Original design and ongoing TLC:
-                        <br/><b>Daniel Rosenberg MD</b>
-                        <br/>Providence Medical Group
-                        <br/>Portland, Oregon
-                        <br/>
-                        <br/>Severe code refactoring:
-                        <br/><b>Maulin Shah MD</b>
-                        <br/>Providence Health & Services
-                        <br/>Portland, Oregon
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <H4 class="panel-title">Built with</h4>
-                    </div>
-                    <div class="panel-body">
-                        Highcharts, with thanks to
-                        <a href="https://shop.highsoft.com/faq">Highsoft</a>, Vik i Sogn, Norway
-                        <br/>Used here under non-commercial license; use is not free for commercial or government entities.
-                        <br/><br/>
-                        JQuery and JQueryTools (<a href="https://jquery.org/license/">MIT license</a>)
-                        <br/>
-                        DateJS, © 2006-2007, Coolite Inc. (<a href="http://www.datejs.com/license">MIT License</a>)
-                        <br/>
-                        Bootstrap, © Twitter (<a href="http://getbootstrap.com/getting-started/#license-faqs">MIT License</a>)
-                        <br/>
-                        Bootstrap theme (<a href="https://github.com/thomaspark/bootswatch/blob/gh-pages/LICENSE">MIT License</a>)
-                    </div>
-
-                </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">About Biligram</h4>
         </div>
+        <div class="modal-body">
+          <div class="panel panel-default">
+
+            <div class="panel-heading">
+              <H4 class="panel-title">Biligram 2.0</h4>
+            </div>
+            <div class="panel-body">
+              Version 2.0 (Javascript, 2016-2017)<br/> Previous C# versions 0.1-0.3 (2013-2015)<br/>
+              <br/>
+              <p class="text-info">Calculates newborn bilirubin risk zones and displays treatment thresholds. Naturally, use of this software does not constitute medical advice; it's merely a tool to help clinicians through the mechanics of plotting data. It could even be
+                terribly wrong, so when making treatment decisions with potentially serious consequences it's always best to check your work.
+              </p>
+              Original design and ongoing TLC:
+              <br/><b>Daniel Rosenberg MD</b>
+              <br/>Providence Medical Group
+              <br/>Portland, Oregon
+              <br/>
+              <br/>Severe code refactoring:
+              <br/><b>Maulin Shah MD</b>
+              <br/>Providence Health & Services
+              <br/>Portland, Oregon
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <H4 class="panel-title">Built with</h4>
+            </div>
+            <div class="panel-body">
+              Highcharts, with thanks to
+              <a href="https://shop.highsoft.com/faq">Highsoft</a>, Vik i Sogn, Norway
+              <br/>Used here under non-commercial license; use is not free for commercial or government entities.
+              <br/><br/> JQuery and JQueryTools (<a href="https://jquery.org/license/">MIT license</a>)
+              <br/> DateJS, © 2006-2007, Coolite Inc. (<a href="http://www.datejs.com/license">MIT License</a>)
+              <br/> Bootstrap, © Twitter (<a href="http://getbootstrap.com/getting-started/#license-faqs">MIT License</a>)
+              <br/> Bootstrap theme (<a href="https://github.com/thomaspark/bootswatch/blob/gh-pages/LICENSE">MIT License</a>)
+            </div>
+
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 
 
 
-<!-- Help DIV -->
-<div class="modal fade" id="helpModal" role="dialog">
+  <!-- Help DIV -->
+  <div class="modal fade" id="helpModal" role="dialog">
     <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Help</h4>
-            </div>
-
-            <div class="modal-body">
-                <div class="panel panel-default">
-
-                    <div class="panel-heading">
-                        <h4 class="panel-title">Using Biligram</h4>
-                    </div>
-
-                    <div class="panel-body">
-                        <div class="list-group">
-                            <div class="list-group-item">Click on legends (like "Low risk zone" or "Transfusion threshold") to make them appear/disappear.</div>
-                            <div class="list-group-item">Click and drag boxes to magnify, then shift-click to pan to get a closer look. Click the Reset Zoom box on the upper right to return to the original view.</div>
-                            <div class="list-group-item">To copy a graph for pasting elsewhere, right click on it. Wait for the image to appear, then right-click and select Copy. Head back to your EMR, place the cursor in the note where you want it, and right click again and select Paste.</div>
-                        </div>
-                    </div>
-
-                </div>
-
-
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <H4 class="panel-title">References</h4>
-                    </div>
-                    <div class="panel-body">
-                        <div class="list">
-
-                            <div class="list-item"><a target="_new" href="http://pediatrics.aappublications.org/content/114/1/297">Management of Hyperbilirubinemia in the Newborn Infant 35 or More Weeks of Gestation</a>, the original article from 2004 describing the use of the Bhutani nomogram.</div>
-                            <div class="list-item"><a target="_new" href="http://pediatrics.aappublications.org/content/124/4/1193">Hyperbilirubinemia in the Newborn Infant &ge;35 Weeks’ Gestation: An Update With Clarifications</a>, adds some management guidelines to the risk stratification in the original article.</div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Help</h4>
         </div>
-    </div>
-</div>
 
-<!-- Main DIV -->
-<div id="biligram">
+        <div class="modal-body">
+          <div class="panel panel-default">
+
+            <div class="panel-heading">
+              <h4 class="panel-title">Using Biligram</h4>
+            </div>
+
+            <div class="panel-body">
+              <div class="list-group">
+                <div class="list-group-item">Click on legends (like "Low risk zone" or "Transfusion threshold") to make them appear/disappear.</div>
+                <div class="list-group-item">Click and drag boxes to magnify, then shift-click to pan to get a closer look. Click the Reset Zoom box on the upper right to return to the original view.</div>
+                <div class="list-group-item">To copy a graph for pasting elsewhere, right click on it. Wait for the image to appear, then right-click and select Copy. Head back to your EMR, place the cursor in the note where you want it, and right click again and select Paste.</div>
+              </div>
+            </div>
+
+          </div>
+
+
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <H4 class="panel-title">References</h4>
+            </div>
+            <div class="panel-body">
+              <div class="list">
+
+                <div class="list-item"><a target="_new" href="http://pediatrics.aappublications.org/content/114/1/297">Management of Hyperbilirubinemia in the Newborn Infant 35 or More Weeks of Gestation</a>, the original article from 2004 describing the use of the Bhutani
+                  nomogram.</div>
+                <div class="list-item"><a target="_new" href="http://pediatrics.aappublications.org/content/124/4/1193">Hyperbilirubinemia in the Newborn Infant &ge;35 Weeks’ Gestation: An Update With Clarifications</a>, adds some management guidelines to the risk stratification
+                  in the original article.</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main DIV -->
+  <div id="biligram">
     <div id="errors">
-        <!--Errors will render here -->
+      <!--Errors will render here -->
     </div>
 
     <div id="chart">
-        <div id="readyToCopy" class="alert alert-success">
-            <strong>Preparing image for copy.</strong>
-            <div>Right-click to copy when image appears</div>
-        </div>
+      <div id="readyToCopy" class="alert alert-success">
+        <strong>Preparing image for copy.</strong>
+        <div>Right-click to copy when image appears</div>
+      </div>
 
-        <div id="copiedImage"></div>
+      <div id="copiedImage"></div>
 
-        <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto; position:relative;">
-            <!--Chart will render here -->
-        </div>
+      <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto; position:relative;">
+        <!--Chart will render here -->
+      </div>
 
-        <div id="legend" >
-            <!--Legend will render here -->
-        </div>
+      <div id="legend">
+        <!--Legend will render here -->
+      </div>
     </div>
 
-    <div id="resultsTable" >
-        <div id="warnings">
-            <!--Errors will render here -->
-        </div>
+    <div id="resultsTable">
+      <div id="warnings">
+        <!--Errors will render here -->
+      </div>
 
 
-        <table style="margin-top:8px;" class="table table-striped table-hover table-condensed">
-            <thead>
-            <tr>
-                <th>Time</th>
-                <th>Age</th>
-                <th>Bilirubin</th>
-                <th>Risk</th>
-                <th class="fullVersionOnly" ><span style="font-weight:normal;font-size:9pt;">(select one)</br></span>Follow-up recommendations</th>
-            </tr>
-            <tr class="fullVersionOnly" >
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th style="font-weight:normal;font-size:9pt;">
-                    <label for="recommendWithoutRisk" class="radio-inline">
+      <table style="margin-top:8px;" class="table table-striped table-hover table-condensed">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Age</th>
+            <th>Bilirubin</th>
+            <th>Risk</th>
+            <th class="fullVersionOnly"><span style="font-weight:normal;font-size:9pt;">(select one)</br></span>Follow-up recommendations</th>
+          </tr>
+          <tr class="fullVersionOnly">
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th style="font-weight:normal;font-size:9pt;">
+              <label for="recommendWithoutRisk" class="radio-inline">
                         <input type="radio" value="riskFactorsNo" id="recommendWithoutRisk" name="recommendation" >
                         without
                         <a class="riskFactorHover">
                             risk factors
                         </a>
                     </label>
-                    <label for="recommendWithRisk" class="radio-inline">
+              <label for="recommendWithRisk" class="radio-inline">
                         <input type="radio" value="riskFactorsYes" id="recommendWithRisk" name="recommendation" >
                         with
                         <a class="riskFactorHover">
                             risk factors
                         </a>
                     </label>
-                </th>
-            </tr>
+            </th>
+          </tr>
 
-            </thead>
-            <tbody>
+        </thead>
+        <tbody>
 
-            </tbody>
-            <tfoot>
-            <td>
-                <button type="submit" id="showAll" style="display:none" class="btn btn-default">Show all &#8964;</button>
-                <button type="submit" id="showFirst" style="display:none" class="btn btn-default">Show most recent &#8963;</button>
-            </td>
-            </tfoot>
-        </table>
+        </tbody>
+        <tfoot>
+          <td>
+            <button type="submit" id="showAll" style="display:none" class="btn btn-default">Show all &#8964;</button>
+            <button type="submit" id="showFirst" style="display:none" class="btn btn-default">Show most recent &#8963;</button>
+          </td>
+        </tfoot>
+      </table>
 
 
     </div>
@@ -219,128 +213,115 @@
 
     <!-- hover over the word "risk factors" in the table above and you see this.-->
     <div id="followUpRiskFactors">
-        <div class="row">
-            <div class="col-sm-10">
-                <table class="table table-condensed">
-                    <thead>
-                    <tr>
-                        <th>Risk factors for severe hyperbilirubinemia to be considered for follow-up plan (see <a href="#" data-toggle="modal" data-target="#helpModal">refs</a>)</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Exclusive breastfeeding, particularly if nursing is not going well and/or weight loss is excessive (8 – 10%)</td>
-                    </tr>
-                    <tr>
-                        <td>Isoimmune or other hemolytic disease (eg, G6PD deficiency, hereditary spherocytosis)</td>
-                    </tr>
-                    <tr>
-                        <td>Previous sibling with jaundice</td>
-                    </tr>
-                    <tr>
-                        <td>Cephalohematoma or significant bruising</td>
-                    </tr>
-                    <tr>
-                        <td>East Asian race</td>
-                    </tr>
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                        <td style="font-size: 0.85em"><i>The gestational age and the predischarge TSB or TcB level are the most important factors that help to predict the risk of hyperbilirubinemia. The risk increases with each decreasing week of gestation from 42–35 weeks.</i></td>
-                    </tr>
-                    </tfoot>
-                </table>
-            </div>
+      <div class="row">
+        <div class="col-sm-10">
+          <table class="table table-condensed">
+            <thead>
+              <tr>
+                <th>Risk factors for severe hyperbilirubinemia to be considered for follow-up plan (see <a href="#" data-toggle="modal" data-target="#helpModal">refs</a>)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Exclusive breastfeeding, particularly if nursing is not going well and/or weight loss is excessive (8 – 10%)</td>
+              </tr>
+              <tr>
+                <td>Isoimmune or other hemolytic disease (eg, G6PD deficiency, hereditary spherocytosis)</td>
+              </tr>
+              <tr>
+                <td>Previous sibling with jaundice</td>
+              </tr>
+              <tr>
+                <td>Cephalohematoma or significant bruising</td>
+              </tr>
+              <tr>
+                <td>East Asian race</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td style="font-size: 0.85em"><i>The gestational age and the predischarge TSB or TcB level are the most important factors that help to predict the risk of hyperbilirubinemia. The risk increases with each decreasing week of gestation from 42–35 weeks.</i></td>
+              </tr>
+            </tfoot>
+          </table>
         </div>
+      </div>
 
     </div>
 
-</div>
+  </div>
 
 
 
-<div id="templates" style="display:none">
+  <div id="templates" style="display:none">
     <!-- templates are used by the javascript to create the content mapped into the structures above -->
 
     <!-- error templates -->
-    <div id="NoWeight" >
-        <div class="alert alert-danger">
-            <strong>Error:</strong>
-            <i>Unable to determine birth weight.</i> Biligram needs a birth weight to appropriately suggest risk stratification. Please enter it in the birth history and try again.
-        </div>
+    <div id="NoWeight">
+      <div class="alert alert-danger">
+        <strong>Error:</strong>
+        <i>Unable to determine birth weight.</i> Biligram needs a birth weight to appropriately suggest risk stratification. Please enter it in the birth history and try again.
+      </div>
     </div>
-    <div id="NoBirthday" >
-        <div class="alert alert-danger">
-            <strong>Error:</strong>
-            <i>Unable to determine birthday</i>. Biligram needs the birthday to calculate how old the infant is.
-        </div>
+    <div id="NoBirthday">
+      <div class="alert alert-danger">
+        <strong>Error:</strong>
+        <i>Unable to determine birthday</i>. Biligram needs the birthday to calculate how old the infant is.
+      </div>
     </div>
-    <div id="NoBirthtime" >
-        <div class="alert alert-danger">
-            <strong>Error:</strong>
-            <i>Unable to determine birth time.</i> Biligram needs the birth time to calculate the precise age of the infant in hours. It may not have been entered by the ward clerk. Please check with them, then try again.
-        </div>
+    <div id="NoBirthtime">
+      <div class="alert alert-danger">
+        <strong>Error:</strong>
+        <i>Unable to determine birth time.</i> Biligram needs the birth time to calculate the precise age of the infant in hours. It may not have been entered by the ward clerk. Please check with them, then try again.
+      </div>
     </div>
-    <div id="NoGA" >
-        <div class="alert alert-danger">
-            <strong>Error:</strong>
-            <i>Unable to determine gestational age.</i> Biligram needs the gestational age to appropriately suggest risk stratification. Please enter it in the birth history and try again.
-        </div>
+    <div id="NoGA">
+      <div class="alert alert-danger">
+        <strong>Error:</strong>
+        <i>Unable to determine gestational age.</i> Biligram needs the gestational age to appropriately suggest risk stratification. Please enter it in the birth history and try again.
+      </div>
     </div>
 
     <!-- Warning: templates -->
-    <div id="InTxZone"  >
-        <div class="alert alert-danger fullVersionOnly">
-            <strong>Please note:</strong>
-            Treatment threshold ({{TYPE}}) crossed for this
-            patient. Because the risk zones and follow-up recommendations are intended
-    for infants who haven't been treated, note the following AAP recommendations
-    for infants who receive phototherapy:
-    <ul>
-    <li> Discontinue phototherapy when serum bilirubin falls below 13–14 mg/dL for infants who are readmitted;
-    <li> If phototherapy is used for infants with hemolysis, or discontinued before 3–4 days of age, a follow-up bilirubin measurement is recommended within 24 hours after discharge;
-    <li> For infants readmitted with hyperbilirubinemia, though rebound is rare, repeat serum bilirubin measurement or clinical follow-up 24 hours after discharge is an option.
-    </ul>
-        </div>
+    <div id="InTxZone">
+      <div class="alert alert-danger fullVersionOnly">
+        <strong>Please note:</strong> Treatment threshold ({{TYPE}}) crossed for this patient. Because the risk zones and follow-up recommendations are intended for infants who haven't been treated, note the following AAP recommendations for infants who
+        receive phototherapy:
+        <ul>
+          <li> Discontinue phototherapy when serum bilirubin falls below 13–14 mg/dL for infants who are readmitted;
+            <li> If phototherapy is used for infants with hemolysis, or discontinued before 3–4 days of age, a follow-up bilirubin measurement is recommended within 24 hours after discharge;
+              <li> For infants readmitted with hyperbilirubinemia, though rebound is rare, repeat serum bilirubin measurement or clinical follow-up 24 hours after discharge is an option.
+        </ul>
+      </div>
     </div>
 
 
-    <div id="InvalidWeight36" >
-        <div class="alert alert-danger">
-            <strong>Warning:</strong>
-            The Bhutani nomogram risk zones are valid only for newborns GA 36+ weeks
-            with a birth weight &ge; 2.5 kg.
-            This patient has a gestational age of {{AGE}} weeks, but a weight of only {{WEIGHT}} kg.
-            <div class="reference">
-                See <a  target=_blank  href="http://www.uptodate.com/contents/hyperbilirubinemia-in-the-preterm-infant-less-than-35-weeks-gestation?source=search_result&search=hyperbilirubinemia+preterm&selectedTitle=1%7E150">Hyperbilirubinemia in the Preterm Infant</a> for alternative thresholds.
-            </div>
+    <div id="InvalidWeight36">
+      <div class="alert alert-danger">
+        <strong>Warning:</strong> The Bhutani nomogram risk zones are valid only for newborns GA 36+ weeks with a birth weight &ge; 2.5 kg. This patient has a gestational age of {{AGE}} weeks, but a weight of only {{WEIGHT}} kg.
+        <div class="reference">
+          See <a target=_blank href="http://www.uptodate.com/contents/hyperbilirubinemia-in-the-preterm-infant-less-than-35-weeks-gestation?source=search_result&search=hyperbilirubinemia+preterm&selectedTitle=1%7E150">Hyperbilirubinemia in the Preterm Infant</a>          for alternative thresholds.
         </div>
+      </div>
     </div>
 
-    <div id="InvalidWeight35" >
-        <div class="alert alert-danger">
-            <strong>Warning:</strong>
-            This patient's gestational age of {{AGE}} weeks and weight of {{WEIGHT}} kg
-            is not defined in the Bhutani nomogram. Risk is only defined for
-            patients in this age range (35-36 weeks) with birth weight &ge; 2 kg.
-            <div class="reference">
-                See <a  target=_blank  href="http://www.uptodate.com/contents/hyperbilirubinemia-in-the-preterm-infant-less-than-35-weeks-gestation?source=search_result&search=hyperbilirubinemia+preterm&selectedTitle=1%7E150">Hyperbilirubinemia in the Preterm Infant</a> for alternative thresholds.
-            </div>
+    <div id="InvalidWeight35">
+      <div class="alert alert-danger">
+        <strong>Warning:</strong> This patient's gestational age of {{AGE}} weeks and weight of {{WEIGHT}} kg is not defined in the Bhutani nomogram. Risk is only defined for patients in this age range (35-36 weeks) with birth weight &ge; 2 kg.
+        <div class="reference">
+          See <a target=_blank href="http://www.uptodate.com/contents/hyperbilirubinemia-in-the-preterm-infant-less-than-35-weeks-gestation?source=search_result&search=hyperbilirubinemia+preterm&selectedTitle=1%7E150">Hyperbilirubinemia in the Preterm Infant</a>          for alternative thresholds.
         </div>
+      </div>
     </div>
 
-    <div id="InvalidAge" >
-        <div class="alert alert-danger">
+    <div id="InvalidAge">
+      <div class="alert alert-danger">
 
-            <strong>Warning:</strong>
-            The Bhutani nomogram only defines risk for infants
-            with a gestational age &ge; 35 weeks.
-            This patient's gestational age of {{AGE}} weeks is less than
-            what's valid on the nomogram.
-            <div class="reference">
-                See <a target=_blank  href="http://www.uptodate.com/contents/hyperbilirubinemia-in-the-preterm-infant-less-than-35-weeks-gestation?source=search_result&search=hyperbilirubinemia+preterm&selectedTitle=1%7E150">Hyperbilirubinemia in the Preterm Infant</a> for alternative thresholds.
-            </div>
+        <strong>Warning:</strong> The Bhutani nomogram only defines risk for infants with a gestational age &ge; 35 weeks. This patient's gestational age of {{AGE}} weeks is less than what's valid on the nomogram.
+        <div class="reference">
+          See <a target=_blank href="http://www.uptodate.com/contents/hyperbilirubinemia-in-the-preterm-infant-less-than-35-weeks-gestation?source=search_result&search=hyperbilirubinemia+preterm&selectedTitle=1%7E150">Hyperbilirubinemia in the Preterm Infant</a>          for alternative thresholds.
         </div>
+      </div>
 
     </div>
 
@@ -354,38 +335,38 @@
      -->
 
     <div id="tooltipTemplate">
-        <div class="biliTT risk{{RISKZONECLASS}} photo{{PHOTOZONECLASS}} transfusion{{TRANSFUSIONZONECLASS}} young{{ISYOUNG}} tooYoung{{ISTOOYOUNG}}">
-            <div class="tooltipText">
-                <b>{{HOURS}}</b> hours of age &mdash; <b>{{LEVEL}}</b> mg/dL ({{METHOD}})
-            </div>
-            <div class="tooltipRiskZone">
-                <span class="riskUndefined">Undefined</span>
-                <span class="riskLow">Low risk zone</span>
-                <span class="riskLowIntermediate">Low-intermediate risk zone</span>
-                <span class="riskHighIntermediate">High-intermediate risk zone</span>
-                <span class="riskHigh">High risk zone</span>
-            </div>
+      <div class="biliTT risk{{RISKZONECLASS}} photo{{PHOTOZONECLASS}} transfusion{{TRANSFUSIONZONECLASS}} young{{ISYOUNG}} tooYoung{{ISTOOYOUNG}}">
+        <div class="tooltipText">
+          <b>{{HOURS}}</b> hours of age &mdash; <b>{{LEVEL}}</b> mg/dL ({{METHOD}})
+        </div>
+        <div class="tooltipRiskZone">
+          <span class="riskUndefined">Undefined</span>
+          <span class="riskLow">Low risk zone</span>
+          <span class="riskLowIntermediate">Low-intermediate risk zone</span>
+          <span class="riskHighIntermediate">High-intermediate risk zone</span>
+          <span class="riskHigh">High risk zone</span>
+        </div>
 
-            <div class="treatmentZone">
+        <div class="treatmentZone">
 
-                <span class="tooltipPhototherapy"> Exceeds <b>phototherapy threshold</b>
+          <span class="tooltipPhototherapy"> Exceeds <b>phototherapy threshold</b>
                  <span class="notLowPhotoWarning">
                            for infants with these risk factors:</br>isoimmune disease, G6PD deficiency, asphysxia, lethargy, temp instability, sepsis, albumin < 3.0 g/dL (if measured)
                         </span>
-                 <span class="youngYesPhototherapy">
+          <span class="youngYesPhototherapy">
                         for infants 35w-37w6d GA
                     </span>
-                 </span>
-                <span class="tooltipTransfusion"> Exceeds <b>exchange transfusion threshold</b>
+          </span>
+          <span class="tooltipTransfusion"> Exceeds <b>exchange transfusion threshold</b>
                  <span class="notLowTransfusionWarning">for infants with these risk factors:</br>isoimmune disease, G6PD deficiency, asphysxia, lethargy, temp instability, sepis, albumin < 3.0 g/dL (if measured)
                         </span>
-                 <span class="youngYesTransfusion">
+          <span class="youngYesTransfusion">
                         for infants 35w-37w6d GA
                     </span>
-                </span>
+          </span>
 
-            </div>
         </div>
+      </div>
     </div>
 
 
@@ -395,75 +376,75 @@
 
 
     <table>
-        <tbody  id="resultTableRowTemplate">
+      <tbody id="resultTableRowTemplate">
         <tr class="biliRow risk{{RISKZONECLASS}} photo{{PHOTOZONECLASS}} transfusion{{TRANSFUSIONZONECLASS}} young{{ISYOUNG}} tooYoung{{ISTOOYOUNG}}">
-            <td>{{TIME}}</td>
-            <td>{{HOURS}}</td>
-            <td>{{LEVEL}}</td>
+          <td>{{TIME}}</td>
+          <td>{{HOURS}}</td>
+          <td>{{LEVEL}}</td>
 
-            <!-- only one of these cells will show -->
-            <td class="zoneName riskUndefined">Undefined</td>
-            <td class="zoneName riskLow">Low risk zone</td>
-            <td class="zoneName riskLowIntermediate">Low-intermediate risk zone</td>
-            <td class="zoneName riskHighIntermediate">High-intermediate risk zone</td>
-            <td class="zoneName riskHigh">High risk zone</td>
-            <td class="fullVersionOnly">
-                <div class="followup riskFactorsYes">
-                    <div class="youngYes">
-                        <span class="recommendation riskHigh">Evaluate for phototherapy, TSB in 4-8 h (inpatient)</span>
-                        <span class="recommendation riskHighIntermediate">Evaluate for phototherapy, TSB in 4-24 h (inpatient or outpatient)</span>
-                        <span class="recommendation riskLowIntermediate">If discharging at  &lt; 72 h of age, follow-up within 2 d; consider TSB/TcB at follow-up</span>
-                        <span class="recommendation riskLow">If discharging at &lt; 72 h of age, follow up within 2 d</span>
-                    </div>
-                    <div class="youngNo">
-                        <span class="recommendation riskHigh">Evaluate for phototherapy, TSB in 4-24 h (inpatient or outpatient)</span>
-                        <span class="recommendation riskHighIntermediate">Evaluate for phototherapy, TcB/TSB within 24 h (inpatient or outpatient)</span>
-                        <span class="recommendation riskLowIntermediate">If discharging at &lt; 72 h of age, follow up within 2 d</span>
-                        <span class="recommendation riskLow">If discharging at &lt; 72 h of age, follow up within 2-3 d</span>
-                    </div>
-                </div>
-                <div class="followup riskFactorsNo">
-                    <div class="youngYes">
-                        <span class="recommendation riskHigh">Evaluate for phototherapy, TSB in 4-24 h (inpatient or outpatient)</span>
-                        <span class="recommendation riskHighIntermediate">Evaluate for phototherapy, TcB/TSB within 24 h (inpatient or outpatient)</span>
-                        <span class="recommendation riskLowIntermediate">If discharging at &lt; 72 h of age, follow up within 2 d</span>
-                        <span class="recommendation riskLow">If discharging at &lt; 72 h of age, follow up within 2-3 d</span>
-                    </div>
-                    <div class="youngNo">
-                        <span class="recommendation riskHigh">Evaluate for phototherapy, TSB in 4-24 h (inpatient or outpatient)</span>
-                        <span class="recommendation riskHighIntermediate">Follow up within 2 d, consider TcB/TSB at follow-up</span>
-                        <span class="recommendation riskLowIntermediate">If discharging at &lt; 72 h of age, follow up within 2-3 d</span>
-                        <span class="recommendation riskLow">If discharging at &lt; 72 h of age, time follow-up according to age at discharge or concerns other than jaundice (e.g., breastfeeding)</span>
-                    </div>
-                </div>
-                <div class="followup riskFactorsNA">(Not applicable under 35 weeks)</div>
+          <!-- only one of these cells will show -->
+          <td class="zoneName riskUndefined">Undefined</td>
+          <td class="zoneName riskLow">Low risk zone</td>
+          <td class="zoneName riskLowIntermediate">Low-intermediate risk zone</td>
+          <td class="zoneName riskHighIntermediate">High-intermediate risk zone</td>
+          <td class="zoneName riskHigh">High risk zone</td>
+          <td class="fullVersionOnly">
+            <div class="followup riskFactorsYes">
+              <div class="youngYes">
+                <span class="recommendation riskHigh">Evaluate for phototherapy, TSB in 4-8 h (inpatient)</span>
+                <span class="recommendation riskHighIntermediate">Evaluate for phototherapy, TSB in 4-24 h (inpatient or outpatient)</span>
+                <span class="recommendation riskLowIntermediate">If discharging at  &lt; 72 h of age, follow-up within 2 d; consider TSB/TcB at follow-up</span>
+                <span class="recommendation riskLow">If discharging at &lt; 72 h of age, follow up within 2 d</span>
+              </div>
+              <div class="youngNo">
+                <span class="recommendation riskHigh">Evaluate for phototherapy, TSB in 4-24 h (inpatient or outpatient)</span>
+                <span class="recommendation riskHighIntermediate">Evaluate for phototherapy, TcB/TSB within 24 h (inpatient or outpatient)</span>
+                <span class="recommendation riskLowIntermediate">If discharging at &lt; 72 h of age, follow up within 2 d</span>
+                <span class="recommendation riskLow">If discharging at &lt; 72 h of age, follow up within 2-3 d</span>
+              </div>
+            </div>
+            <div class="followup riskFactorsNo">
+              <div class="youngYes">
+                <span class="recommendation riskHigh">Evaluate for phototherapy, TSB in 4-24 h (inpatient or outpatient)</span>
+                <span class="recommendation riskHighIntermediate">Evaluate for phototherapy, TcB/TSB within 24 h (inpatient or outpatient)</span>
+                <span class="recommendation riskLowIntermediate">If discharging at &lt; 72 h of age, follow up within 2 d</span>
+                <span class="recommendation riskLow">If discharging at &lt; 72 h of age, follow up within 2-3 d</span>
+              </div>
+              <div class="youngNo">
+                <span class="recommendation riskHigh">Evaluate for phototherapy, TSB in 4-24 h (inpatient or outpatient)</span>
+                <span class="recommendation riskHighIntermediate">Follow up within 2 d, consider TcB/TSB at follow-up</span>
+                <span class="recommendation riskLowIntermediate">If discharging at &lt; 72 h of age, follow up within 2-3 d</span>
+                <span class="recommendation riskLow">If discharging at &lt; 72 h of age, time follow-up according to age at discharge or concerns other than jaundice (e.g., breastfeeding)</span>
+              </div>
+            </div>
+            <div class="followup riskFactorsNA">(Not applicable under 35 weeks)</div>
             <td>
-                <div class="treatmentZone">
-                    <span class="tooltipPhototherapy">Exceeds <b>phototherapy</b> threshold</span>
-                    <span class="notLowPhotoWarning">
+              <div class="treatmentZone">
+                <span class="tooltipPhototherapy">Exceeds <b>phototherapy</b> threshold</span>
+                <span class="notLowPhotoWarning">
                        for infants with these risk factors:</br>
                         isoimmune disease, G6PD deficiency, asphysxia, lethargy, temp instability, sepis, albumin < 3.0 g/dL (if measured)
                     </span>
-                    <span class="youngYesPhototherapy">
+                <span class="youngYesPhototherapy">
                     for infants 35w-37w6d GA
                     </span>
-                    <span class="tooltipTransfusion">Exceeds <b>exchange transfusion</b> threshold</span>
-                    <span class="notLowTransfusionWarning">
+                <span class="tooltipTransfusion">Exceeds <b>exchange transfusion</b> threshold</span>
+                <span class="notLowTransfusionWarning">
                        for infants with these risk factors:</br>
                         isoimmune disease, G6PD deficiency, asphysxia, lethargy, temp instability, sepis, albumin < 3.0 g/dL (if measured)
                     </span>
-                    <span class="youngYesTransfusion">
+                <span class="youngYesTransfusion">
                     for infants 35w-37w6d GA
                     </span>
-                </div>
+              </div>
             </td>
 
         </tr>
-        </tbody>
+      </tbody>
     </table>
 
-</div>
+  </div>
 </div>
 <script>
-parent.postMessage(document.getElementById("biligramContent").innerHTML, '*');
+  parent.postMessage(document.getElementById("biligramContent").innerHTML, '*');
 </script>
