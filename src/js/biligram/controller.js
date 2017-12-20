@@ -16,6 +16,7 @@ define([
     $('#errors')
       .appendTo('body')
       .show();
+    $('.navbar').show();
   }
 
   /**
@@ -150,8 +151,20 @@ define([
     });
   }
 
+
+  /**
+   * updateMenuItems - additional items can be added to the menu by including
+   * hyperlinks with a class of menuItem in your ETX. you can configure when
+   * they are visible using miniVersionOnly and fullVersionOnly
+   */
+  function updateMenuItems() {
+      $('.menuItem').wrap('<li></li>').parent().prependTo('#menuLinks');
+  }
+
   return {
     start: function() {
+      updateMenuItems();
+
       // asynchronously create the new infant
       var infant = parser.newInfant(renderData, renderErrors);
       setupCopyPaste(infant);

@@ -1,8 +1,15 @@
+<div id="biligram" style='display:none'>
 <script type="text/javascript"
 src="***/path/to/biligram.js"
 ></script>
 
-<form id="data" style="display:none;">
+<!-- add any links you would like to add to the menu bar here
+    include "miniVersionOnly" to only show in mini, "fullVersionOnly" to
+    only show in full, and neither to show always -->
+<a href="#" class="miniVersionOnly menuItem" href="EpicACT:BILIGRAM_POPUP_FULL,RunParam:LaunchOptions:2,@EPICACTCONTEXT@">Full version of Biligram</a>
+<a href="#" class="miniVersionOnly menuItem" href='EpicACT:OB_BILIRUBIN_CONSOLE_ACTIVITY,RunParam:LaunchOptions:2,@EPICACTCONTEXT@'>Enter Bilirubin Value</a>
+
+<form id="data">
 
     <!-- standard epic DBLINK smartlinks to pull birth info -->
     <textarea id="birthDay">@DBLINK(ept,110)@</textarea>
@@ -23,3 +30,4 @@ src="***/path/to/biligram.js"
     <textarea id="phototherapy"></textarea>
 
 </form>
+</div>

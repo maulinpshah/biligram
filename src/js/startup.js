@@ -55,8 +55,8 @@
   window.addEventListener('message', function(e) {
     var div = document.createElement('div');
     div.innerHTML = e.data;
-    document
-      .body
+    document.getElementById('biligram')
+      .parentNode
       .appendChild(div);
 
     // startup!
