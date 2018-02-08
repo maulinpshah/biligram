@@ -1,0 +1,17 @@
+Code to run the Biligram LPG
+
+PARAMS
+%MINI - set to 1 to make the minified version (optional)
+
+s %ETXID="57447"
+d:%MINI=1 zBulkRep^EALIBG("<span style='display:none' data-bili-mini></span>")
+n infoAry,idx,line,lines,pGlo
+s HTMLText=1,RTFText="",V("HTML")=1,V("RTF")=""
+d setInfoAry^LUPPDB(.infoAry,"EPT",ID,DAT)
+s pGlo=$$zGtTmpGlo^%Zefnlih()
+s %=$$SText^HSTLINK2(%ETXID,"1,800,35","",ID,DAT,"","",1,"",.infoAry,pGlo)
+x "
+f idx=1:1:@pGlo@(0)
+s line=@pGlo@(idx)
+d zBulkRep^EALIBG(line) "
+d %zRelTmpGlo^%Zefnlih(pGlo)
