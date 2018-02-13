@@ -8,8 +8,14 @@
       'highcharts-more': '../lib/highcharts-more',
       'highstock': '../lib/highstock',
       'canvg': '../lib/canvg',
+      'StackBlur': '../lib/StackBlur',
+      'rgbcolor': '../lib/rgbcolor',
     },
     'shim': {
+      'canvg': {
+        'exports': 'canvg',
+        'deps': ['StackBlur', 'rgbcolor'],
+      },
       'highcharts-core': {
         'exports': 'Highcharts',
         'deps': ['jquery'],
