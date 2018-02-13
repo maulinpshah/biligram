@@ -2,6 +2,7 @@ Code to run the Biligram LPG
 
 PARAMS
 %MINI - set to 1 to make the minified version (optional)
+%ETXID - the .1 of ETX that contains your biligram form
 
 s %ETXID="57447"
 d:%MINI=1 zBulkRep^EALIBG("<span style='display:none' data-bili-mini></span>")
