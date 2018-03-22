@@ -34,7 +34,13 @@ define([
       // alert("About to render the table");
       ui.renderTable(infant);
 
-      // $('.riskFactorHover').popover({position: 'bottom center', trigger: 'hover', title: 'Risk Factors', opacity: 0.95, content: $('#followUpRiskFactors').html(), html: true});
+      $('.riskFactorHover').popover({
+          position: 'bottom center',
+          title: '<div style="font-weight:bold;padding:3px;">Risk factors for severe hyperbilirubinemia to be considered for follow-up plan</div>',
+          content: $('#followUpRiskFactors').html(),
+          html: true,
+          container: 'body',
+          trigger: 'focus'});
 
       // setup risk factor toggler for recommendation
       $('[name=recommendation]').click(function() {
