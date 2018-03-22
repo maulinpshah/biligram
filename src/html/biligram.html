@@ -132,6 +132,33 @@
     </div>
   </div>
 
+  <!-- click on the word "risk factors" and you see this.-->
+  <div class="modal fade modal-lg" id="followUpRiskFactors" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Risk factors for severe hyperbilirubinemia to be considered for follow-up plan (see <a href="#" data-toggle="modal" data-target="#helpModal">refs</a>)</h4>
+        </div>
+        <div class="modal-body">
+              <div class="list-group">
+                <div class="list-group-item">Exclusive breastfeeding, particularly if nursing is not going well and/or weight loss is excessive (8 – 10%)</div>
+                <div class="list-group-item">Isoimmune or other hemolytic disease (eg, G6PD deficiency, hereditary spherocytosis)</div>
+                <div class="list-group-item">Previous sibling with jaundice</div>
+                <div class="list-group-item">
+                  Cephalohematoma or significant bruising
+                </div>
+                <div class="list-group-item">East Asian race</div>
+              </div>
+              <i>The gestational age and the predischarge TSB or TcB level are the most important factors that help to predict the risk of hyperbilirubinemia. The risk increases with each decreasing week of gestation from 42–35 weeks.</i>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Main DIV -->
   <div id="biligram">
     <div id="errors">
@@ -179,14 +206,14 @@
               <label for="recommendWithoutRisk" class="radio-inline">
                         <input type="radio" value="riskFactorsNo" id="recommendWithoutRisk" name="recommendation" >
                         without
-                        <a class="riskFactorHover">
+                        <a class="riskFactorHover"  data-toggle="modal" data-target="#followUpRiskFactors">
                             risk factors
                         </a>
                     </label>
               <label for="recommendWithRisk" class="radio-inline">
                         <input type="radio" value="riskFactorsYes" id="recommendWithRisk" name="recommendation" >
                         with
-                        <a class="riskFactorHover">
+                        <a class="riskFactorHover" data-toggle="modal" data-target="#followUpRiskFactors">
                             risk factors
                         </a>
                     </label>
@@ -209,45 +236,8 @@
     </div>
 
 
-    <!-- hover over the word "risk factors" in the table above and you see this.-->
-    <div id="followUpRiskFactors">
-      <div class="row">
-        <div class="col-sm-10">
-          <table class="table table-condensed">
-            <thead>
-              <tr>
-                <th>Risk factors for severe hyperbilirubinemia to be considered for follow-up plan (see <a href="#" data-toggle="modal" data-target="#helpModal">refs</a>)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Exclusive breastfeeding, particularly if nursing is not going well and/or weight loss is excessive (8 – 10%)</td>
-              </tr>
-              <tr>
-                <td>Isoimmune or other hemolytic disease (eg, G6PD deficiency, hereditary spherocytosis)</td>
-              </tr>
-              <tr>
-                <td>Previous sibling with jaundice</td>
-              </tr>
-              <tr>
-                <td>Cephalohematoma or significant bruising</td>
-              </tr>
-              <tr>
-                <td>East Asian race</td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <td style="font-size: 0.85em"><i>The gestational age and the predischarge TSB or TcB level are the most important factors that help to predict the risk of hyperbilirubinemia. The risk increases with each decreasing week of gestation from 42–35 weeks.</i></td>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
-      </div>
 
-    </div>
 
-  </div>
 
 
 
@@ -443,6 +433,7 @@
 
   </div>
 </div>
+
 <script>
   parent.postMessage(document.getElementById("biligramContent").innerHTML, '*');
 </script>

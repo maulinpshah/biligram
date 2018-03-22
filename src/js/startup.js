@@ -30,6 +30,7 @@
       },
       'bootstrap': {
         'deps': ['jquery'],
+        'exports': '$.fn.tooltip',
       },
     },
   });

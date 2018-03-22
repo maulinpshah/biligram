@@ -34,7 +34,7 @@ define([
       // alert("About to render the table");
       ui.renderTable(infant);
 
-      $('.riskFactorHover').tooltip({position: 'bottom center', opacity: 0.95, tip: '#followUpRiskFactors'});
+      // $('.riskFactorHover').popover({position: 'bottom center', trigger: 'hover', title: 'Risk Factors', opacity: 0.95, content: $('#followUpRiskFactors').html(), html: true});
 
       // setup risk factor toggler for recommendation
       $('[name=recommendation]').click(function() {
