@@ -141,10 +141,18 @@ define([
       if (index > 1) { // Skip the first index since it's the header row
         var cells = $('td', this);
 
-        // alert("Cell text: \n" + this.innerText);
+
+        // alert("Cell text: \n" + this.innerText + ">>"+ cells.length);
         // If the row doesn't begin with a number, it's a comment, like "Critical results called to RN by Elisia...:
         // and we need to ignore it
-        if (this.innerText.match(/^\d/g)) {
+        // if (this.innerText.match(/^\d/g)) {
+
+        // Updated 2018-05-24 to look for an actual timestamp, in order to avoid tripping
+        // over lab comments that happen to begin with numbers
+        // if this.innerText.match(/^\d+\/\d+\/\d+\s\d+:\d+\s\d+/g)) {
+        
+        // Updated 2018-05-27: If we have 4+ rows, we know we have a result instead of a number, since the result column is not blank
+        if (cells.length >= 3) {
           data.push({
             time: Date.parse(cells[0].innerText),
             level: parseFloat(cells[1].innerText),
